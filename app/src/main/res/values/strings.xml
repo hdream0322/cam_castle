@@ -55,4 +55,25 @@
 
     <string name="auto_launching_camera">Launching camera&#8230;</string>
     <string name="auto_launch_camera_failed_no_camera">No camera app found. Unable to auto-launch camera.</string>
+
+    <!-- Main Activity UI -->
+    <string name="main_activity_camera_mute_title">Camera Mute</string>
+    <string name="main_activity_camera_mute_description">Toggle camera shutter sound on/off</string>
+    <string name="main_activity_boot_lock_title">Boot Lock</string>
+    <string name="main_activity_boot_lock_description">Persist mute setting across reboots</string>
+    <string name="main_activity_auto_launch_title">Auto Launch Camera</string>
+    <string name="main_activity_auto_launch_description">Open camera after toggling mute</string>
+    <string name="main_activity_faq_title">FAQ</string>
+    <string name="main_activity_faq_description">Frequently asked questions</string>
+    <string name="main_activity_welcome_title">Welcome to Cam Castle</string>
+    <string name="main_activity_welcome_subtitle">Control your camera shutter sound</string>
+
+    <!-- Quick Settings Tile -->
+    <string name="tile_label">Camera Mute</string>
+    <string name="tile_muted">Shutter Sound Off</string>
+    <string name="tile_unmuted">Shutter Sound On</string>
+    <string name="tile_no_permission">No Permission</string>
+
+    <!-- Widget -->
+    <string name="widget_description">Toggle camera shutter sound on/off</string>
 </resources>

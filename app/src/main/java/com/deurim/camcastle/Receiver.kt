@@ -15,11 +15,13 @@ class Receiver : BroadcastReceiver() {
     private fun muteCamera(context: Context) {
         CameraHelper.setCameraMute(context.contentResolver)
         Toast.makeText(context, R.string.main_activity_mute_enabled, Toast.LENGTH_SHORT).show()
+        CameraMuteWidget.updateAllWidgets(context)
     }
 
     private fun unmuteCamera(context: Context) {
         CameraHelper.setCameraUnmute(context.contentResolver)
         Toast.makeText(context, R.string.main_activity_mute_disabled, Toast.LENGTH_SHORT).show()
+        CameraMuteWidget.updateAllWidgets(context)
     }
 
     @RequiresApi(Build.VERSION_CODES.M)

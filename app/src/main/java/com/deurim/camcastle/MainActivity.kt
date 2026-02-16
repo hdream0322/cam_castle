@@ -7,8 +7,7 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.Settings
-import android.view.Menu
-import android.view.MenuItem
+import android.service.quicksettings.TileService
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -17,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.core.net.toUri
 import androidx.preference.PreferenceManager
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 
@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var switchBtn: SwitchMaterial
     private lateinit var lockBtn: ImageView
+    private lateinit var autoLaunchSwitch: SwitchMaterial
+    private lateinit var faqCard: MaterialCardView
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,18 +35,30 @@ class MainActivity : AppCompatActivity() {
 
         switchBtn = findViewById(R.id.main_activity_switch)
         lockBtn = findViewById(R.id.main_activity_boot_lock)
+        autoLaunchSwitch = findViewById(R.id.main_activity_auto_launch_switch)
+        faqCard = findViewById(R.id.main_activity_faq_card)
 
         setOnClickListeners()
 
         // Initial update views
         updateToggle()
         updateBootToggle()
+        updateAutoLaunchToggle()
 
         if (!isPermissionGranted()) {
             showPermissionDialog()
         }
 
         handleIntents(intent)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    override fun onResume() {
+        super.onResume()
+        // Update UI when returning from background
+        updateToggle()
+        updateBootToggle()
+        updateAutoLaunchToggle()
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -55,19 +69,12 @@ class MainActivity : AppCompatActivity() {
         lockBtn.setOnClickListener {
             bootLockClicked()
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_faq -> launchFAQ()
-            R.id.action_settings -> launchSettings()
+        autoLaunchSwitch.setOnClickListener {
+            autoLaunchClicked()
         }
-        return super.onOptionsItemSelected(item)
+        faqCard.setOnClickListener {
+            launchFAQ()
+        }
     }
 
     private fun launchFAQ() {
@@ -174,6 +181,7 @@ class MainActivity : AppCompatActivity() {
         CameraHelper.setCameraMute(contentResolver)
         Toast.makeText(this, R.string.main_activity_mute_enabled, Toast.LENGTH_SHORT).show()
         updateToggle()
+        notifyWidgetsAndTiles()
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -186,6 +194,7 @@ class MainActivity : AppCompatActivity() {
         CameraHelper.setCameraUnmute(contentResolver)
         Toast.makeText(this, R.string.main_activity_mute_disabled, Toast.LENGTH_SHORT).show()
         updateToggle()
+        notifyWidgetsAndTiles()
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -210,6 +219,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         updateBootToggle()
+    }
+
+    private fun autoLaunchClicked() {
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val currentState = sharedPreferences.getBoolean("camera_auto_launch", false)
+
+        sharedPreferences.edit {
+            putBoolean("camera_auto_launch", !currentState)
+        }
+
+        updateAutoLaunchToggle()
+    }
+
+    private fun updateAutoLaunchToggle() {
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val autoLaunch = sharedPreferences.getBoolean("camera_auto_launch", false)
+        autoLaunchSwitch.isChecked = autoLaunch
     }
 
     private fun isBootEnabled(): Boolean {
@@ -237,6 +263,19 @@ class MainActivity : AppCompatActivity() {
 
         val dialog = dialogBuilder.create()
         dialog.show()
+    }
+
+    private fun notifyWidgetsAndTiles() {
+        // Update widgets
+        CameraMuteWidget.updateAllWidgets(this)
+
+        // Update Quick Settings Tile (Android 7.0+)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            TileService.requestListeningState(
+                this,
+                ComponentName(this, CameraMuteTileService::class.java)
+            )
+        }
     }
 
 }

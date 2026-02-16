@@ -55,5 +55,25 @@
     <string name="auto_launching_camera">카메라 자동 실행 중&#8230;</string>
     <string name="auto_launch_camera_failed_no_camera">설치된 카메라 어플이 없어 자동 실행이 불가능합니다.</string>
 
+    <!-- Main Activity UI -->
+    <string name="main_activity_camera_mute_title">카메라 무음</string>
+    <string name="main_activity_camera_mute_description">카메라 셔터음을 켜거나 끕니다</string>
+    <string name="main_activity_boot_lock_title">부팅 잠금</string>
+    <string name="main_activity_boot_lock_description">재부팅 후에도 무음 설정을 유지합니다</string>
+    <string name="main_activity_auto_launch_title">카메라 자동 실행</string>
+    <string name="main_activity_auto_launch_description">무음 전환 후 카메라를 자동으로 엽니다</string>
+    <string name="main_activity_faq_title">자주 묻는 질문</string>
+    <string name="main_activity_faq_description">자주 묻는 질문과 답변</string>
+    <string name="main_activity_welcome_title">캠 캐슬에 오신 것을 환영합니다</string>
+    <string name="main_activity_welcome_subtitle">카메라 셔터음을 제어하세요</string>
+
+    <!-- Quick Settings Tile -->
+    <string name="tile_label">카메라 무음</string>
+    <string name="tile_muted">셔터음 비활성화</string>
+    <string name="tile_unmuted">셔터음 활성화</string>
+    <string name="tile_no_permission">권한 없음</string>
+
+    <!-- Widget -->
+    <string name="widget_description">카메라 셔터음을 켜거나 끕니다</string>
 
 </resources>

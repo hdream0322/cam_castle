@@ -27,7 +27,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.camsung"
         android:enableOnBackInvokedCallback="true"
-        tools:targetApi="33">
+        tools:targetApi="36">
         <activity
             android:name="android.com.ericswpark.camsung.MainActivity"
             android:exported="true">

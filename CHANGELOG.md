@@ -13,7 +13,16 @@ The format is based on [Keep a Changelog][keep-a-changelog].
 
 # [Unreleased]
 
-[Unreleased]: https://github.com/ericswpark/camsung/compare/1.2.1..HEAD
+[Unreleased]: https://github.com/ericswpark/camsung/compare/1.3.0..HEAD
+
+# [1.3.0] - 2026-02-16
+
+## Changed
+
+- Updated targetSdkVersion from 22 to 36, enabling direct installation on Android 14+ devices without ADB bypass requirements
+- The app can now be installed using standard APK sideloading on all Android 6.0+ devices
+
+[1.3.0]: https://github.com/ericswpark/camsung/compare/1.2.1...1.3.0
 
 # [1.2.1] - 2025-10-09
 

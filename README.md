@@ -21,15 +21,9 @@ Silence camera on Samsung phones
 
 ## Installation
 
-If your phone is running Android 13 or below, just sideload the APK.
+Just sideload the APK on any Android device running Android 6.0 (API 23) or higher.
 
-If your phone is running Android 14 or above, you need to install the app via ADB as Google blocks installing apps that target SDK 22 and below. Enable Developer Mode and USB Debugging, then run:
-
-```
-adb install --bypass-low-target-sdk-block app-release.apk
-```
-
-Make sure to replace `app-release.apk` if you've renamed the file.
+**Note:** If you're using version 1.2.1 or earlier on Android 14+, you need to install via ADB with the `--bypass-low-target-sdk-block` flag. Version 1.3.0+ can be installed directly.
 
 ## Usage
 

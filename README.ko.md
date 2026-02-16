@@ -14,15 +14,9 @@
 
 ## 설치
 
-만약 폰의 안드로이드 버전이 13 이하라면 APK를 그대로 설치하실 수 있습니다.
+Android 6.0 (API 23) 이상을 실행하는 모든 Android 기기에서 APK를 그대로 설치하실 수 있습니다.
 
-만약 폰의 안드로이드 버전이 14 이상이면 구글이 SDK 버전 22를 타겟팅하는 어플의 설치를 막기 때문에 ADB를 통하여 어플을 설치해야 됩니다. 개발자 모드를 활성화한 후 USB 디버깅을 켠 다음, 다음을 실행하세요:
-
-```
-adb install --bypass-low-target-sdk-block app-release.apk
-```
-
-만약 파일 이름을 변경하셨다면 `app-release.apk`를 바꿔주세요.
+**참고:** 버전 1.2.1 이하를 Android 14+ 기기에 설치하려면 `--bypass-low-target-sdk-block` 플래그와 함께 ADB를 통해 설치해야 합니다. 버전 1.3.0 이상은 직접 설치가 가능합니다.
 
 더 자세한 설치 방법은 [나무위키에도 등재되어 있습니다](https://namu.wiki/w/%EC%BA%A0%EC%84%B1?from=camsung#s-4)!
 

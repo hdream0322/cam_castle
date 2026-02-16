@@ -6,7 +6,16 @@
 
 # [미출시]
 
-[미출시]: https://github.com/ericswpark/camsung/compare/1.2.1..HEAD
+[미출시]: https://github.com/ericswpark/camsung/compare/1.3.0..HEAD
+
+# [1.3.0] - 2026-02-16
+
+## 수정
+
+- targetSdkVersion을 22에서 36으로 업데이트하여 Android 14+ 기기에서 ADB bypass 없이 직접 설치 가능
+- 이제 모든 Android 6.0+ 기기에서 표준 APK 사이드로딩으로 설치 가능
+
+[1.3.0]: https://github.com/ericswpark/camsung/compare/1.2.1...1.3.0
 
 # [1.2.1] - 2025-10-09
 

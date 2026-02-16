@@ -70,8 +70,8 @@
 
     <!-- Quick Settings Tile -->
     <string name="tile_label">Camera Mute</string>
-    <string name="tile_muted">Shutter Sound Off</string>
-    <string name="tile_unmuted">Shutter Sound On</string>
+    <string name="tile_muted">Shutter\nSound Off</string>
+    <string name="tile_unmuted">Shutter\nSound On</string>
     <string name="tile_no_permission">No Permission</string>
 
     <!-- Widget -->

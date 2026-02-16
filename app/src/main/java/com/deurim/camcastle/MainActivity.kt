@@ -268,6 +268,7 @@ class MainActivity : AppCompatActivity() {
     private fun notifyWidgetsAndTiles() {
         // Update widgets
         CameraMuteWidget.updateAllWidgets(this)
+        CameraMuteWidget2x1.updateAllWidgets(this)
 
         // Update Quick Settings Tile (Android 7.0+)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

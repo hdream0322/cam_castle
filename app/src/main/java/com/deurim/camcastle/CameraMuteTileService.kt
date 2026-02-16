@@ -37,6 +37,7 @@ class CameraMuteTileService : TileService() {
 
         // Update widgets
         CameraMuteWidget.updateAllWidgets(this)
+        CameraMuteWidget2x1.updateAllWidgets(this)
     }
 
     private fun updateTileState() {

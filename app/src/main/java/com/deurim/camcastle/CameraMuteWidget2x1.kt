@@ -12,17 +12,17 @@ import android.service.quicksettings.TileService
 import android.widget.RemoteViews
 import androidx.annotation.RequiresApi
 
-class CameraMuteWidget : AppWidgetProvider() {
+class CameraMuteWidget2x1 : AppWidgetProvider() {
 
     companion object {
-        private const val ACTION_WIDGET_TOGGLE = "com.deurim.camcastle.WIDGET_TOGGLE"
+        private const val ACTION_WIDGET_TOGGLE = "com.deurim.camcastle.WIDGET_TOGGLE_2X1"
 
         fun updateAllWidgets(context: Context) {
             val appWidgetManager = AppWidgetManager.getInstance(context)
-            val componentName = ComponentName(context, CameraMuteWidget::class.java)
+            val componentName = ComponentName(context, CameraMuteWidget2x1::class.java)
             val appWidgetIds = appWidgetManager.getAppWidgetIds(componentName)
 
-            val intent = Intent(context, CameraMuteWidget::class.java).apply {
+            val intent = Intent(context, CameraMuteWidget2x1::class.java).apply {
                 action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
                 putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds)
             }
@@ -68,8 +68,8 @@ class CameraMuteWidget : AppWidgetProvider() {
 
         updateAllWidgets(context)
 
-        // Update 2x1 widgets
-        CameraMuteWidget2x1.updateAllWidgets(context)
+        // Update 1x1 widgets
+        CameraMuteWidget.updateAllWidgets(context)
 
         // Update Quick Settings Tile (Android 7.0+)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -85,7 +85,7 @@ class CameraMuteWidget : AppWidgetProvider() {
         appWidgetManager: AppWidgetManager,
         appWidgetId: Int
     ) {
-        val views = RemoteViews(context.packageName, R.layout.widget_camera_mute)
+        val views = RemoteViews(context.packageName, R.layout.widget_camera_mute_2x1)
 
         val hasPermission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Settings.System.canWrite(context)
@@ -110,7 +110,7 @@ class CameraMuteWidget : AppWidgetProvider() {
             )
         }
 
-        val toggleIntent = Intent(context, CameraMuteWidget::class.java).apply {
+        val toggleIntent = Intent(context, CameraMuteWidget2x1::class.java).apply {
             action = ACTION_WIDGET_TOGGLE
         }
         val pendingIntent = PendingIntent.getBroadcast(

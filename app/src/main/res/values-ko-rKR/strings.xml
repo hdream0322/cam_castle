@@ -69,8 +69,8 @@
 
     <!-- Quick Settings Tile -->
     <string name="tile_label">카메라 무음</string>
-    <string name="tile_muted">셔터음 비활성화</string>
-    <string name="tile_unmuted">셔터음 활성화</string>
+    <string name="tile_muted">셔터음\n비활성화</string>
+    <string name="tile_unmuted">셔터음\n활성화</string>
     <string name="tile_no_permission">권한 없음</string>
 
     <!-- Widget -->

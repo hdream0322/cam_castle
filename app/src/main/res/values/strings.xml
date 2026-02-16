@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">camsung</string>
+    <string name="app_name">Cam Castle</string>
 
     <string name="main_activity_mute_enabled">Camera mute enabled.</string>
     <string name="main_activity_mute_disabled">Camera mute disabled.</string>

@@ -1,6 +1,6 @@
-package android.com.ericswpark.camsung.faq
+package com.deurim.camcastle.faq
 
-import android.com.ericswpark.camsung.R
+import com.deurim.camcastle.R
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity

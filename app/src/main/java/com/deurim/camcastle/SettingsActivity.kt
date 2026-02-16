@@ -1,4 +1,4 @@
-package android.com.ericswpark.camsung
+package com.deurim.camcastle
 
 import android.os.Bundle
 import android.view.MenuItem

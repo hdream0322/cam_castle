@@ -1,4 +1,4 @@
-package android.com.ericswpark.camsung.faq
+package com.deurim.camcastle.faq
 
 import androidx.annotation.StringRes
 

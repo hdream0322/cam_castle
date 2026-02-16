@@ -8,12 +8,12 @@ android {
     buildToolsVersion "35.0.0"
 
     defaultConfig {
-        applicationId "android.com.ericswpark.camsung"
+        applicationId "com.deurim.camcastle"
         minSdkVersion 22
         // Updated to 36 to enable installation on Android 14+ without ADB bypass
         targetSdkVersion 36
-        versionCode 10
-        versionName "1.3.0"
+        versionCode 2
+        versionName "0.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,7 +31,7 @@ android {
     kotlin {
         jvmToolchain(21)
     }
-    namespace 'android.com.ericswpark.camsung'
+    namespace 'com.deurim.camcastle'
 
     dependenciesInfo {
         // Disable including dependency metadata when building APKs

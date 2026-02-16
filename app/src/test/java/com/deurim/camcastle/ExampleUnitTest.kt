@@ -1,4 +1,4 @@
-package android.com.ericswpark.camsung
+package com.deurim.camcastle
 
 import org.junit.Test
 

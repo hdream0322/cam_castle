@@ -1,4 +1,4 @@
-package android.com.ericswpark.camsung
+package com.deurim.camcastle
 
 import android.content.ContentResolver
 import android.provider.Settings

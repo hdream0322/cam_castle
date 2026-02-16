@@ -1,6 +1,6 @@
-package android.com.ericswpark.camsung
+package com.deurim.camcastle
 
-import android.com.ericswpark.camsung.faq.FAQActivity
+import com.deurim.camcastle.faq.FAQActivity
 import android.content.ComponentName
 import android.content.Intent
 import android.os.Build
@@ -21,7 +21,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 
 
 class MainActivity : AppCompatActivity() {
-    private val sharedPrefKey = "android.com.ericswpark.camsung.PREFERENCES"
+    private val sharedPrefKey = "com.deurim.camcastle.PREFERENCES"
 
     private lateinit var switchBtn: SwitchMaterial
     private lateinit var lockBtn: ImageView

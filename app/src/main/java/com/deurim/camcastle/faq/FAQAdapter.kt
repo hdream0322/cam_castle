@@ -1,6 +1,6 @@
-package android.com.ericswpark.camsung.faq
+package com.deurim.camcastle.faq
 
-import android.com.ericswpark.camsung.R
+import com.deurim.camcastle.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

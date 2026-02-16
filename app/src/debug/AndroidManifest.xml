@@ -25,11 +25,11 @@
         android:resizeableActivity="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.camsung"
+        android:theme="@style/Theme.camcastle"
         android:enableOnBackInvokedCallback="true"
         tools:targetApi="36">
         <activity
-            android:name="android.com.ericswpark.camsung.MainActivity"
+            android:name="com.deurim.camcastle.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

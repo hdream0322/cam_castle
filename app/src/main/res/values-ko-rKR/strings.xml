@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">캠성</string>
+    <string name="app_name">캠 캐슬</string>
 
     <string name="main_activity_mute_enabled">카메라 무음 활성화됨.</string>
     <string name="main_activity_mute_disabled">카메라 무음 비활성화됨.</string>

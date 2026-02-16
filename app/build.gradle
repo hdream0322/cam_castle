@@ -10,8 +10,9 @@ android {
     defaultConfig {
         applicationId "com.deurim.camcastle"
         minSdkVersion 22
-        // Updated to 36 to enable installation on Android 14+ without ADB bypass
-        targetSdkVersion 36
+        // Do NOT change this from 22 - required for WRITE_SETTINGS permission
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion 22
         versionCode 2
         versionName "0.0.1"
 

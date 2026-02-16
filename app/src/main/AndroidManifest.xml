@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.camcastle"
         android:enableOnBackInvokedCallback="true"
-        tools:targetApi="36">
+        tools:targetApi="22">
 
         <activity
             android:name=".MainActivity"
